@@ -5,4 +5,15 @@
   <p>Created: {{ project.data[0].attributes.created_at | date:'MMMM dd, yyyy' }}</p>
   <!-- <p>TODO: add project components to data</p> -->
 	{{projectComponent.hey}}
+
+  <br>
+  <br>
+  <div ng-repeat="comment in comments">
+    <div>{{comment.text}}</div>
+  </div>
+  <textarea name="" id="" cols="30" rows="10"  ng-model="newMessage.text">
+    
+  </textarea>
+  <button ng-click="comments.$add(newMessage); newMessage.text = ''">Ask Question</button>
+
 </div>
